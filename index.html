@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Get the Value of Text Input Field in JavaScript</title>
+</head>
+<body>
+    <input type="text" placeholder="Type something..." id="myInput">
+
+    <script language="javascript" src="lz-string/libs/lz-string.js"></script>
+    <button type="button" onclick="getInputValue();">Enter your Env variable</button>
+
+    <p id="compress">Compressed variable goes here</p>
+
+    <script>
+        function getInputValue(){
+        // Selecting the input element and get its value 
+        var string = document.getElementById("myInput").value;
+        console.log("Size of sample is: " + string.length);
+        var compressed = LZString.compress(string);
+        console.log("Size of compressed sample is: " + compressed.length);
+        compressedString = LZString.decompress(compressed);
+        console.log("Decompressed string is: " + compressedString);
+        document.getElementById("compress").innerHTML = compressedString
+}
+
+    </script>
+    
+</body>
+</html>
